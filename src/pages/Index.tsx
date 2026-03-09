@@ -31,6 +31,7 @@ const moduleContent: Record<string, React.ReactNode> = {
 };
 
 const Index = () => {
+  const navigate = useNavigate();
   const [booted, setBooted] = useState(false);
   const [openModule, setOpenModule] = useState<string | null>(null);
 
