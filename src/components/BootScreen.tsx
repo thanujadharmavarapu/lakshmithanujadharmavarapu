@@ -87,18 +87,10 @@ const BootScreen = ({ onComplete }: BootScreenProps) => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.8, duration: 0.6 }}
-                className="mt-3 text-lg font-body text-secondary glow-text-purple tracking-wide"
+                className="mt-3 text-sm md:text-base font-body text-secondary glow-text-purple tracking-wide max-w-lg mx-auto"
               >
-                IoT & Embedded Systems Developer
+                "Designing Intelligent Security Systems with IoT and AI and Building Interactive Webpages for Dynamic User Experiences"
               </motion.div>
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.2, duration: 0.6 }}
-                className="mt-4 text-sm font-mono text-muted-foreground italic"
-              >
-                "Designing Intelligent Security Systems with IoT and AI"
-              </motion.p>
               <motion.div
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
