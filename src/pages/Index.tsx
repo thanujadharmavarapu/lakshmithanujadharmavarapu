@@ -1,4 +1,5 @@
 import { useState, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Cpu, FolderOpen, Clock, Award, Trophy, Radio, Shield } from "lucide-react";
 import ParticleField from "@/components/ParticleField";
