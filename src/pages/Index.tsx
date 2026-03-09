@@ -66,7 +66,10 @@ const Index = () => {
               </div>
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-neon-green animate-pulse-glow" />
+                  <span 
+                    onClick={() => navigate('/admin')}
+                    className="w-2 h-2 rounded-full bg-neon-green animate-pulse-glow cursor-pointer hover:scale-150 transition-transform" 
+                  />
                   <span className="text-xs font-mono text-muted-foreground hidden sm:inline">
                     ALL SYSTEMS NOMINAL
                   </span>
