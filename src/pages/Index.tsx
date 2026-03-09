@@ -55,12 +55,12 @@ const Index = () => {
             <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <Shield size={20} className="text-primary" />
-                <span className="font-display text-sm tracking-wider text-primary glow-text-blue">
-                  SENTINEL.OS
-                </span>
-                <span className="text-xs font-mono text-muted-foreground hidden sm:inline">
-                  v2.6.0 | STATUS: ONLINE
-                </span>
+                <span className="font-display text-sm tracking-wider text-primary glow-text-blue">Thanuja
+
+              </span>
+                <span className="text-xs font-mono text-muted-foreground hidden sm:inline">v 1.0 | STATUS: ONLINE
+
+              </span>
               </div>
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2">
@@ -86,9 +86,9 @@ const Index = () => {
               <div className="text-xs font-mono tracking-[0.3em] text-primary/60 mb-2">
                 SYSTEM OPERATOR
               </div>
-              <h1 className="text-3xl md:text-5xl font-display font-bold text-primary glow-text-blue tracking-wider">
-                LAKSHMI THANUJA
-              </h1>
+              <h1 className="text-3xl md:text-5xl font-display font-bold text-primary glow-text-blue tracking-wider">LAKSHMI THANUJA 
+Dharmavarapu
+            </h1>
               <p className="mt-2 text-base md:text-lg font-body text-secondary glow-text-purple tracking-wide">Aspiring Software Engineer
 
             </p>
