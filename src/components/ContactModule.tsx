@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, Send } from "lucide-react";
+import { Mail, Phone, Linkedin, Send } from "lucide-react";
 
 const ContactModule = () => {
   const [message, setMessage] = useState("");
@@ -24,9 +24,9 @@ const ContactModule = () => {
       {/* Contact links */}
       <div className="space-y-3">
         {[
-          { icon: <Mail size={16} />, label: "EMAIL", value: "lakshmithanuja@email.com", href: "mailto:lakshmithanuja@email.com" },
-          { icon: <Linkedin size={16} />, label: "LINKEDIN", value: "/in/lakshmi-thanuja", href: "https://linkedin.com" },
-          { icon: <Github size={16} />, label: "GITHUB", value: "/lakshmi-thanuja", href: "https://github.com" },
+          { icon: <Mail size={16} />, label: "EMAIL", value: "thanujadharmavarapu@gmail.com", href: "mailto:thanujadharmavarapu@gmail.com" },
+          { icon: <Phone size={16} />, label: "PHONE", value: "+91 8297889975", href: "tel:+918297889975" },
+          { icon: <Linkedin size={16} />, label: "LINKEDIN", value: "/in/lakshmi-thanuja-dharmavarapu", href: "https://linkedin.com/in/lakshmi-thanuja-dharmavarapu-software-developer" },
         ].map((link, i) => (
           <motion.a
             key={link.label}
