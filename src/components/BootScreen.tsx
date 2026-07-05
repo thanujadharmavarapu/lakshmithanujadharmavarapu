@@ -23,8 +23,8 @@ const BootScreen = ({ onComplete }: BootScreenProps) => {
     bootLines.forEach((_, i) => {
       setTimeout(() => setVisibleLines(i + 1), bootLines[i].delay);
     });
-    setTimeout(() => setShowReveal(true), 3200);
-    setTimeout(onComplete, 5500);
+    setTimeout(() => setShowReveal(true), 1100);
+    setTimeout(onComplete, 2400);
   }, [onComplete]);
 
   return (
