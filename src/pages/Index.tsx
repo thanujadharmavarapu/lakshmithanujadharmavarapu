@@ -145,7 +145,7 @@ const Index = () => {
           {/* Footer */}
           <footer className="border-t border-border/30 py-3 text-center">
             <span className="text-xs font-mono text-muted-foreground/50">
-              SENTINEL.OS © 2026 | LAKSHMI THANUJA
+              © 2026 LAKSHMI THANUJA
             </span>
           </footer>
         </motion.div>
