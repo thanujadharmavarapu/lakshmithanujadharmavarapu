@@ -39,19 +39,20 @@ export interface Achievement {
 
 export const defaultSkills: Skill[] = [
   { name: "Python", category: "Programming", level: 85 },
-  { name: "C", category: "Programming", level: 75 },
-  { name: "JavaScript", category: "Programming", level: 80 },
+  { name: "JavaScript", category: "Programming", level: 78 },
   { name: "HTML", category: "Web Development", level: 90 },
-  { name: "CSS", category: "Web Development", level: 85 },
-  { name: "React", category: "Web Development", level: 78 },
-  { name: "ESP32", category: "IoT & Embedded", level: 88 },
-  { name: "Arduino", category: "IoT & Embedded", level: 85 },
-  { name: "Sensors", category: "IoT & Embedded", level: 82 },
-  { name: "Embedded C", category: "IoT & Embedded", level: 76 },
-  { name: "Computer Vision", category: "AI", level: 72 },
-  { name: "Human Detection", category: "AI", level: 70 },
-  { name: "Git", category: "Tools", level: 80 },
-  { name: "Cloud Tools", category: "Tools", level: 68 },
+  { name: "CSS", category: "Web Development", level: 88 },
+  { name: "Power BI", category: "Data Visualization", level: 85 },
+  { name: "Arduino", category: "IoT & Hardware", level: 88 },
+  { name: "Raspberry Pi", category: "IoT & Hardware", level: 82 },
+  { name: "ESP32", category: "IoT & Hardware", level: 90 },
+  { name: "Sensors", category: "IoT & Hardware", level: 85 },
+  { name: "Embedded Systems", category: "IoT & Hardware", level: 80 },
+  { name: "YOLO / AI Detection", category: "AI", level: 75 },
+  { name: "Lovable", category: "AI Tools", level: 88 },
+  { name: "Cursor", category: "AI Tools", level: 82 },
+  { name: "Claude", category: "AI Tools", level: 85 },
+  { name: "Antigravity", category: "AI Tools", level: 78 },
 ];
 
 export const defaultProjects: Project[] = [
@@ -59,51 +60,70 @@ export const defaultProjects: Project[] = [
     id: "1",
     title: "SentinelX",
     subtitle: "Smart IoT-Based Intrusion Detection and Automated Defense System",
-    description: "An advanced IoT security system that combines sensor arrays with AI-powered human detection for automated intrusion response.",
+    description:
+      "Designed and developed an IoT-based intrusion detection system integrating ESP32-CAM, PIR, and ultrasonic sensors with AI-powered human detection for accurate, real-time threat response.",
     features: [
-      "Motion detection using PIR and Ultrasonic sensors",
-      "ESP32-CAM image capture",
-      "AI human verification",
-      "Automated defense activation",
-      "GSM alerts",
-      "Cloud storage integration",
+      "IoT intrusion detection using ESP32-CAM, PIR and ultrasonic sensors",
+      "AI (YOLO) human detection to reduce false alarms",
+      "Real-time alerts and automated defense activation",
+      "Cloud image storage integrated with Google Drive",
+      "Web dashboard for remote monitoring and control",
     ],
-    techStack: ["ESP32", "Python", "Computer Vision", "Arduino", "GSM Module", "Cloud"],
-    github: "https://github.com",
+    techStack: ["ESP32-CAM", "PIR Sensor", "Ultrasonic Sensor", "YOLO", "Python", "Google Drive API", "Web Dashboard"],
+    github: "https://github.com/",
   },
 ];
 
 export const defaultExperience: Experience[] = [
   {
     id: "1",
-    year: "2026",
-    title: "IoT Security Project Development",
-    organization: "SRKR Engineering College",
-    description: "Developed intelligent IoT-based security systems integrating embedded hardware with AI-powered threat detection and automated response mechanisms.",
+    year: "02/2026 – 03/2026",
+    title: "Power BI Intern",
+    organization: "Microsoft Elevate",
+    description:
+      "Designed and developed Power BI dashboards for data insights and visualization. Performed data transformation, modeling, and trend analysis. Created interactive and optimized dashboards for better usability, strengthening skills in data analytics, visualization, and business intelligence tools.",
+  },
+  {
+    id: "2",
+    year: "2025 – 2028",
+    title: "B.Tech in IoT and Cybersecurity with Blockchain Technology",
+    organization: "Sagi Rama Krishnam Raju Engineering College, Bhimavaram",
+    description:
+      "Pursuing engineering degree focused on IoT systems, cybersecurity, and blockchain technologies with hands-on project development.",
+  },
+  {
+    id: "3",
+    year: "2022 – 2025",
+    title: "Diploma in Computer Science and Engineering",
+    organization: "A.A.N.M & V.V.R.S.R Polytechnic, Gudlavalleru",
+    description:
+      "Completed diploma in Computer Science and Engineering with core focus on programming, systems, and software fundamentals.",
   },
 ];
 
 export const defaultCertificates: Certificate[] = [
   {
     id: "1",
-    title: "IoT Fundamentals",
-    organization: "Cisco Networking Academy",
-    date: "2025",
-  },
-  {
-    id: "2",
-    title: "Python for Data Science",
-    organization: "IBM",
-    date: "2025",
+    title: "Microsoft Elevate — Power BI Internship",
+    organization: "Microsoft",
+    date: "2026",
   },
 ];
 
 export const defaultAchievements: Achievement[] = [
   {
     id: "1",
-    title: "SAMAGRA 2026 National Level Technical Event",
+    title: "SentinelX — IoT Security System",
     organization: "SRKR Engineering College",
-    description: "Project Presentation — Showcased SentinelX IoT security system.",
+    description:
+      "Designed and deployed an end-to-end AI + IoT intrusion detection system with cloud integration and web dashboard.",
+  },
+  {
+    id: "2",
+    title: "Microsoft Elevate Internship Completion",
+    organization: "Microsoft",
+    description:
+      "Successfully completed Power BI internship with hands-on experience in data visualization and dashboard development.",
   },
 ];
 
