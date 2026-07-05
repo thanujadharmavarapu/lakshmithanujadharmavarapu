@@ -7,16 +7,39 @@ import {
   defaultSkills, defaultProjects, defaultExperience, defaultCertificates, defaultAchievements,
   type Skill, type Project, type Experience, type Certificate, type Achievement,
 } from "@/lib/defaultData";
+import { supabase } from "@/integrations/supabase/client";
 
 type Tab = "skills" | "projects" | "experience" | "certificates" | "achievements";
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
+  const [authed, setAuthed] = useState(false);
 
   useEffect(() => {
-    if (localStorage.getItem("sentinel_admin") !== "true") {
-      navigate("/admin");
-    }
+    let active = true;
+    const check = async (userId: string | undefined) => {
+      if (!userId) { navigate("/admin"); return; }
+      const { data, error } = await supabase
+        .from("user_roles")
+        .select("role")
+        .eq("user_id", userId)
+        .eq("role", "admin")
+        .maybeSingle();
+      if (!active) return;
+      if (error || !data) {
+        await supabase.auth.signOut();
+        navigate("/admin");
+        return;
+      }
+      setAuthed(true);
+    };
+
+    const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
+      check(session?.user?.id);
+    });
+    supabase.auth.getSession().then(({ data }) => check(data.session?.user?.id));
+
+    return () => { active = false; sub.subscription.unsubscribe(); };
   }, [navigate]);
 
   const [tab, setTab] = useState<Tab>("skills");
@@ -37,10 +60,18 @@ const AdminDashboard = () => {
     setTimeout(() => setSaved(false), 2000);
   };
 
-  const logout = () => {
-    localStorage.removeItem("sentinel_admin");
+  const logout = async () => {
+    await supabase.auth.signOut();
     navigate("/admin");
   };
+
+  if (!authed) {
+    return (
+      <div className="min-h-screen bg-background cyber-grid-bg flex items-center justify-center">
+        <div className="font-mono text-xs text-muted-foreground">VERIFYING CLEARANCE...</div>
+      </div>
+    );
+  }
 
   const tabs: { id: Tab; label: string }[] = [
     { id: "skills", label: "SKILLS" },
