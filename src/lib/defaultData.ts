@@ -75,6 +75,21 @@ export const defaultProjects: Project[] = [
     techStack: ["ESP32-CAM", "PIR Sensor", "Ultrasonic Sensor", "YOLO", "Python", "Google Drive API", "Web Dashboard"],
     github: "https://github.com/",
   },
+  {
+    id: "2",
+    title: "Power BI Data Analysis Dashboard",
+    subtitle: "Interactive Business Intelligence & Insights Platform",
+    description:
+      "Built end-to-end Power BI dashboards during the Microsoft Elevate internship — importing raw data, cleaning and transforming it with Power Query, modeling relationships, and delivering interactive visual insights for decision making.",
+    features: [
+      "Data cleaning, transformation and modeling using Power Query",
+      "DAX measures for KPIs, trends and comparative analysis",
+      "Interactive dashboards with drill-down and filtering",
+      "Trend analysis and business insight reporting",
+      "Optimized report performance and usability",
+    ],
+    techStack: ["Power BI", "DAX", "Power Query", "Excel", "Data Modeling", "Data Visualization"],
+  },
 ];
 
 export const defaultExperience: Experience[] = [
