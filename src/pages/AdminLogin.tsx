@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Shield, Lock } from "lucide-react";
 
-const ADMIN_EMAIL = "admin@sentinel.os";
-const ADMIN_PASS = "sentinel2026";
+const ADMIN_EMAIL = "thanujadharmavarapu@gmail.com";
+const ADMIN_PASS = "Thanujabhilash";
 
 const AdminLogin = () => {
   const [email, setEmail] = useState("");
