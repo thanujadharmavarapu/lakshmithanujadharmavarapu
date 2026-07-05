@@ -2,14 +2,13 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const bootLines = [
-  { text: "> INITIALIZING SYSTEM...", delay: 0 },
-  { text: "> Loading kernel modules...", delay: 400 },
-  { text: "> Establishing secure connection... OK", delay: 800 },
-  { text: "> Neural network online...", delay: 1200 },
-  { text: "> AI security protocols loaded...", delay: 1600 },
-  { text: "> Sensor array calibrated...", delay: 2000 },
-  { text: "> IoT mesh network connected...", delay: 2400 },
-  { text: "> SYSTEM READY", delay: 2800 },
+  { text: "> INITIALIZING SENTINEL.OS...", delay: 0 },
+  { text: "> Loading IoT + Cybersecurity modules...", delay: 150 },
+  { text: "> ESP32 / Arduino / Raspberry Pi linked... OK", delay: 300 },
+  { text: "> AI detection (YOLO) online...", delay: 450 },
+  { text: "> Power BI analytics engine ready...", delay: 600 },
+  { text: "> Operator profile loaded: L. THANUJA", delay: 750 },
+  { text: "> SYSTEM READY", delay: 900 },
 ];
 
 interface BootScreenProps {
