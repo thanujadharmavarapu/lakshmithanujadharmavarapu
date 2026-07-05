@@ -4,11 +4,13 @@ import { motion } from "framer-motion";
 import { Shield, Lock } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
+const OWNER_EMAIL = "thanujadharmavarapu@gmail.com";
+
 const AdminLogin = () => {
-  const [mode, setMode] = useState<"signin" | "signup">("signin");
+  const [mode, setMode] = useState<"signin" | "forgot">("signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [message, setMessage] = useState<{ text: string; kind: "error" | "info" } | null>(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -18,26 +20,51 @@ const AdminLogin = () => {
     });
   }, [navigate]);
 
-  const handleSubmit = async () => {
-    setError("");
+  const handleSignIn = async () => {
+    setMessage(null);
     setLoading(true);
     try {
-      if (mode === "signup") {
-        const { error: err } = await supabase.auth.signUp({
-          email,
+      const emailNorm = email.trim().toLowerCase();
+
+      let { error: err } = await supabase.auth.signInWithPassword({ email: emailNorm, password });
+
+      // One-time silent bootstrap: if the owner account doesn't exist yet, create it and sign in.
+      if (err && emailNorm === OWNER_EMAIL && /invalid/i.test(err.message)) {
+        const { error: signUpErr } = await supabase.auth.signUp({
+          email: emailNorm,
           password,
           options: { emailRedirectTo: `${window.location.origin}/admin/dashboard` },
         });
-        if (err) throw err;
-        setError("Account created. If email confirmation is enabled, verify your inbox, then sign in.");
-        setMode("signin");
-      } else {
-        const { error: err } = await supabase.auth.signInWithPassword({ email, password });
-        if (err) throw err;
-        navigate("/admin/dashboard");
+        if (!signUpErr) {
+          const res = await supabase.auth.signInWithPassword({ email: emailNorm, password });
+          err = res.error;
+        }
       }
+
+      if (err) throw err;
+      navigate("/admin/dashboard");
     } catch (e: any) {
-      setError(e?.message ?? "Authentication failed");
+      setMessage({ text: e?.message ?? "Authentication failed", kind: "error" });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleForgot = async () => {
+    setMessage(null);
+    setLoading(true);
+    try {
+      const emailNorm = email.trim().toLowerCase();
+      if (emailNorm !== OWNER_EMAIL) {
+        throw new Error("Password reset is only available for the site owner.");
+      }
+      const { error: err } = await supabase.auth.resetPasswordForEmail(emailNorm, {
+        redirectTo: `${window.location.origin}/reset-password`,
+      });
+      if (err) throw err;
+      setMessage({ text: "Reset link sent. Check your inbox to set a new password.", kind: "info" });
+    } catch (e: any) {
+      setMessage({ text: e?.message ?? "Could not send reset link", kind: "error" });
     } finally {
       setLoading(false);
     }
@@ -56,7 +83,7 @@ const AdminLogin = () => {
             SECURE TERMINAL
           </h1>
           <p className="font-mono text-xs text-muted-foreground mt-1">
-            AUTHORIZED PERSONNEL ONLY
+            {mode === "signin" ? "AUTHORIZED PERSONNEL ONLY" : "PASSWORD RECOVERY"}
           </p>
         </div>
 
@@ -70,36 +97,41 @@ const AdminLogin = () => {
               className="w-full bg-muted/50 border border-border/50 rounded px-3 py-2 text-sm font-mono text-foreground focus:outline-none focus:border-primary/50"
             />
           </div>
-          <div>
-            <label className="font-mono text-xs text-muted-foreground block mb-1">PASSWORD:</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
-              className="w-full bg-muted/50 border border-border/50 rounded px-3 py-2 text-sm font-mono text-foreground focus:outline-none focus:border-primary/50"
-            />
-          </div>
 
-          {error && (
-            <div className="font-mono text-xs text-destructive">{error}</div>
+          {mode === "signin" && (
+            <div>
+              <label className="font-mono text-xs text-muted-foreground block mb-1">PASSWORD:</label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                onKeyDown={(e) => e.key === "Enter" && handleSignIn()}
+                className="w-full bg-muted/50 border border-border/50 rounded px-3 py-2 text-sm font-mono text-foreground focus:outline-none focus:border-primary/50"
+              />
+            </div>
+          )}
+
+          {message && (
+            <div className={`font-mono text-xs ${message.kind === "error" ? "text-destructive" : "text-neon-green"}`}>
+              {message.text}
+            </div>
           )}
 
           <button
-            onClick={handleSubmit}
+            onClick={mode === "signin" ? handleSignIn : handleForgot}
             disabled={loading}
             className="w-full flex items-center justify-center gap-2 py-2 rounded border border-primary/30 bg-primary/10 text-primary font-display text-sm tracking-wider hover:bg-primary/20 transition-colors disabled:opacity-50"
           >
             <Lock size={14} />
-            {loading ? "..." : mode === "signin" ? "AUTHENTICATE" : "REGISTER"}
+            {loading ? "..." : mode === "signin" ? "AUTHENTICATE" : "SEND RESET LINK"}
           </button>
 
           <button
             type="button"
-            onClick={() => { setError(""); setMode(mode === "signin" ? "signup" : "signin"); }}
+            onClick={() => { setMessage(null); setMode(mode === "signin" ? "forgot" : "signin"); }}
             className="w-full text-center font-mono text-[10px] text-muted-foreground hover:text-primary transition-colors"
           >
-            {mode === "signin" ? "» FIRST-TIME SETUP: REGISTER OPERATOR" : "» BACK TO SIGN IN"}
+            {mode === "signin" ? "» FORGOT PASSWORD?" : "« BACK TO SIGN IN"}
           </button>
         </div>
       </motion.div>
