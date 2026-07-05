@@ -88,7 +88,7 @@ const BootScreen = ({ onComplete }: BootScreenProps) => {
                 transition={{ delay: 0.6, duration: 0.4 }}
                 className="mt-3 text-sm md:text-base font-body text-secondary glow-text-purple tracking-wide max-w-lg mx-auto"
               >
-                Aspiring Software Engineer · IoT • AI • Cybersecurity
+                Aspiring Software Engineer · IoT • AI • Cybersecurity • Data Analysis
               </motion.div>
               <motion.div
                 initial={{ scaleX: 0 }}
