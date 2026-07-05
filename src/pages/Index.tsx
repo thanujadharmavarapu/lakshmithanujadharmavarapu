@@ -91,8 +91,8 @@ const Index = () => {
               <div className="text-xs font-mono tracking-[0.3em] text-primary/60 mb-2">
                 SYSTEM OPERATOR
               </div>
-              <h1 className="text-2xl md:text-4xl font-display font-bold text-primary glow-text-blue tracking-wider">LAKSHMI THANUJA Dharmavarapu</h1>
-              <p className="mt-2 text-base md:text-lg font-body text-secondary glow-text-purple tracking-wide">Aspiring Software Engineer
+              <h1 className="text-2xl md:text-4xl font-display font-bold text-primary glow-text-blue tracking-wider">LAKSHMI THANUJA DHARMAVARAPU</h1>
+              <p className="mt-2 text-base md:text-lg font-body text-secondary glow-text-purple tracking-wide">Aspiring Software Engineer · IoT • AI • Cybersecurity
 
             </p>
               <p className="mt-3 text-sm font-mono text-muted-foreground max-w-lg mx-auto">"Designing Intelligent Security Systems with IoT and AI and Building Interactive Webpages for Dynamic User Experiences"
