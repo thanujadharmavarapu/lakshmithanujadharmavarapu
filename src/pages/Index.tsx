@@ -92,10 +92,10 @@ const Index = () => {
                 SYSTEM OPERATOR
               </div>
               <h1 className="text-2xl md:text-4xl font-display font-bold text-primary glow-text-blue tracking-wider">LAKSHMI THANUJA DHARMAVARAPU</h1>
-              <p className="mt-2 text-base md:text-lg font-body text-secondary glow-text-purple tracking-wide">Aspiring Software Engineer · IoT • AI • Cybersecurity
+              <p className="mt-2 text-base md:text-lg font-body text-secondary glow-text-purple tracking-wide">Aspiring Software Engineer · IoT • AI • Cybersecurity • Data Analysis
 
             </p>
-              <p className="mt-3 text-sm font-mono text-muted-foreground max-w-lg mx-auto">"Designing Intelligent Security Systems with IoT and AI and Building Interactive Webpages for Dynamic User Experiences"
+              <p className="mt-3 text-sm font-mono text-muted-foreground max-w-lg mx-auto">"Designing Intelligent Security Systems with IoT & AI, Building Interactive Webpages, and Turning Data into Insights through Analysis & Visualization"
 
             </p>
               <div className="mt-4 h-[1px] max-w-xs mx-auto bg-gradient-to-r from-transparent via-primary/40 to-transparent" />

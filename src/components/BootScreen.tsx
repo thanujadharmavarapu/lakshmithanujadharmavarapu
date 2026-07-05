@@ -3,12 +3,12 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const bootLines = [
   { text: "> INITIALIZING SENTINEL.OS...", delay: 0 },
-  { text: "> Loading IoT + Cybersecurity modules...", delay: 150 },
-  { text: "> ESP32 / Arduino / Raspberry Pi linked... OK", delay: 300 },
-  { text: "> AI detection (YOLO) online...", delay: 450 },
-  { text: "> Power BI analytics engine ready...", delay: 600 },
-  { text: "> Operator profile loaded: L. THANUJA", delay: 750 },
-  { text: "> SYSTEM READY", delay: 900 },
+  { text: "> Loading IoT + Cybersecurity modules...", delay: 350 },
+  { text: "> ESP32 / Arduino / Raspberry Pi linked... OK", delay: 700 },
+  { text: "> AI detection (YOLO) online...", delay: 1050 },
+  { text: "> Power BI + Data Analysis engine ready...", delay: 1400 },
+  { text: "> Operator profile loaded: L. THANUJA", delay: 1750 },
+  { text: "> SYSTEM READY", delay: 2100 },
 ];
 
 interface BootScreenProps {
@@ -23,8 +23,8 @@ const BootScreen = ({ onComplete }: BootScreenProps) => {
     bootLines.forEach((_, i) => {
       setTimeout(() => setVisibleLines(i + 1), bootLines[i].delay);
     });
-    setTimeout(() => setShowReveal(true), 1100);
-    setTimeout(onComplete, 2400);
+    setTimeout(() => setShowReveal(true), 2500);
+    setTimeout(onComplete, 4800);
   }, [onComplete]);
 
   return (
@@ -88,7 +88,7 @@ const BootScreen = ({ onComplete }: BootScreenProps) => {
                 transition={{ delay: 0.6, duration: 0.4 }}
                 className="mt-3 text-sm md:text-base font-body text-secondary glow-text-purple tracking-wide max-w-lg mx-auto"
               >
-                Aspiring Software Engineer · IoT • AI • Cybersecurity
+                Aspiring Software Engineer · IoT • AI • Cybersecurity • Data Analysis
               </motion.div>
               <motion.div
                 initial={{ scaleX: 0 }}

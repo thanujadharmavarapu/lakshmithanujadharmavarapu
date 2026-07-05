@@ -42,7 +42,10 @@ export const defaultSkills: Skill[] = [
   { name: "JavaScript", category: "Programming", level: 78 },
   { name: "HTML", category: "Web Development", level: 90 },
   { name: "CSS", category: "Web Development", level: 88 },
-  { name: "Power BI", category: "Data Visualization", level: 85 },
+  { name: "Power BI", category: "Data Analysis", level: 85 },
+  { name: "Data Analysis", category: "Data Analysis", level: 82 },
+  { name: "Data Visualization", category: "Data Analysis", level: 84 },
+  { name: "Excel / DAX", category: "Data Analysis", level: 78 },
   { name: "Arduino", category: "IoT & Hardware", level: 88 },
   { name: "Raspberry Pi", category: "IoT & Hardware", level: 82 },
   { name: "ESP32", category: "IoT & Hardware", level: 90 },
@@ -71,6 +74,21 @@ export const defaultProjects: Project[] = [
     ],
     techStack: ["ESP32-CAM", "PIR Sensor", "Ultrasonic Sensor", "YOLO", "Python", "Google Drive API", "Web Dashboard"],
     github: "https://github.com/",
+  },
+  {
+    id: "2",
+    title: "Power BI Data Analysis Dashboard",
+    subtitle: "Interactive Business Intelligence & Insights Platform",
+    description:
+      "Built end-to-end Power BI dashboards during the Microsoft Elevate internship — importing raw data, cleaning and transforming it with Power Query, modeling relationships, and delivering interactive visual insights for decision making.",
+    features: [
+      "Data cleaning, transformation and modeling using Power Query",
+      "DAX measures for KPIs, trends and comparative analysis",
+      "Interactive dashboards with drill-down and filtering",
+      "Trend analysis and business insight reporting",
+      "Optimized report performance and usability",
+    ],
+    techStack: ["Power BI", "DAX", "Power Query", "Excel", "Data Modeling", "Data Visualization"],
   },
 ];
 
