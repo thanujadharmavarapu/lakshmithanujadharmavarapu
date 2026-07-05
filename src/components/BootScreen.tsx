@@ -3,12 +3,12 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const bootLines = [
   { text: "> INITIALIZING SENTINEL.OS...", delay: 0 },
-  { text: "> Loading IoT + Cybersecurity modules...", delay: 150 },
-  { text: "> ESP32 / Arduino / Raspberry Pi linked... OK", delay: 300 },
-  { text: "> AI detection (YOLO) online...", delay: 450 },
-  { text: "> Power BI analytics engine ready...", delay: 600 },
-  { text: "> Operator profile loaded: L. THANUJA", delay: 750 },
-  { text: "> SYSTEM READY", delay: 900 },
+  { text: "> Loading IoT + Cybersecurity modules...", delay: 350 },
+  { text: "> ESP32 / Arduino / Raspberry Pi linked... OK", delay: 700 },
+  { text: "> AI detection (YOLO) online...", delay: 1050 },
+  { text: "> Power BI + Data Analysis engine ready...", delay: 1400 },
+  { text: "> Operator profile loaded: L. THANUJA", delay: 1750 },
+  { text: "> SYSTEM READY", delay: 2100 },
 ];
 
 interface BootScreenProps {
