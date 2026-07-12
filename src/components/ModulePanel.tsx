@@ -88,6 +88,7 @@ const ModulePanel = ({ title, icon, isOpen, onClose, children, color = "blue" }:
               </div>
               <button
                 onClick={onClose}
+                aria-label={`Close ${title} panel`}
                 className="p-1 rounded border border-border/50 text-muted-foreground hover:text-foreground hover:border-primary/50 transition-colors"
               >
                 <X size={18} />
