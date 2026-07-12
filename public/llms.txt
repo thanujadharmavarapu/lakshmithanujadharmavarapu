@@ -1,0 +1,13 @@
+# Lakshmi Thanuja Dharmavarapu — Portfolio
+
+> Portfolio of Lakshmi Thanuja Dharmavarapu, an aspiring software engineer working on IoT security, AI-powered computer vision, and data analysis & visualization.
+
+Lakshmi Thanuja is a computer science student at SRKR Engineering College with internship experience at Infosys Springboard and Microsoft. Her work focuses on ESP32/YOLO-based intrusion detection, Python data analysis, and interactive web experiences.
+
+## Pages
+
+- [Home](/): Interactive dashboard covering skills, projects, experience, certificates, achievements, and contact.
+
+## Optional
+
+- [LinkedIn](https://linkedin.com/in/lakshmi-thanuja-dharmavarapu-software-developer): Professional profile.

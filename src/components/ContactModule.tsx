@@ -62,6 +62,7 @@ const ContactModule = () => {
           />
           <button
             onClick={handleSend}
+            aria-label="Send message"
             className="px-4 py-2 rounded border border-primary/30 bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
           >
             <Send size={16} />
