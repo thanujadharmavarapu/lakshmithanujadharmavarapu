@@ -32,7 +32,7 @@ This modern web application is built utilizing a high-performance frontend archi
 This project is actively deployed and live online. 
 
 *   **Hosting Platform:** Lovable One-Click Publish
-*   **Live Web Address:** [https://lovable.app](https://lovable.app)
+*   **Live Web Address:** https://lakshmithanujadharmavarapu.lovable.app/
 *   **Continuous Integration:** Full two-way synchronization is established between Lovable and this GitHub repository. 
 *   **Live Updates:** Any design or structural changes made through the Lovable interface automatically commit to this repository and redeploy the production site instantly.
 
